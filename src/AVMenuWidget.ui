@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AVMenuWidget</class>
+ <widget class="QWidget" name="AVMenuWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>541</width>
+    <height>72</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AVMenuWidget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#mainWidget {
+  background: rgb(69,69,69);
+  border: 0px;
+}
+
+#positionLabel,
+#durationLabel {
+  color: white;
+}
+
+QSlider::groove:horizontal {
+  border: 0px;
+  background: white;
+  height: 6px;
+  border-radius: 1px;
+}
+
+QSlider::sub-page:horizontal {
+  background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1, stop: 0 #66e, stop: 1 #bbf);
+  background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1, stop: 0 #bbf, stop: 1 #55f);
+  border: 0px solid #777;
+  height: 6px;
+  border-radius: 1px;
+}
+
+QSlider::add-page:horizontal {
+  background: #fff;
+  border: 1px solid #777;
+  height: 6px;
+  border-radius: 1px;
+}
+
+QSlider::handle:horizontal {
+  background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eee, stop:1 #ccc);
+  border: 1px solid #777;
+  width: 6px;
+  margin-top: -1px;
+  margin-bottom: -1px;
+  border-radius: 4px;
+}
+
+QSlider::handle:horizontal:hover {
+  background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #fff, stop:1 #ddd);
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal:disabled {
+  background: #bbb;
+  border-color: #999;
+}
+
+QSlider::add-page:horizontal:disabled {
+  background: #eee;
+  border-color: #999;
+}
+
+QSlider::handle:horizontal:disabled {
+  background: #eee;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+QPushButton#stopButton,
+QPushButton#playButton,
+QPushButton#fastRewindButton,
+QPushButton#fastForwardButton,
+QPushButton#ejectButton,
+QPushButton#aboutButton,
+QPushButton#openButton,
+QPushButton#volumeButton,
+QPushButton#outputButton,
+QPushButton#effectButton {
+  border: 2px solid #fff;
+  border-radius: 11px;
+  color: transparent;
+  width: 18px;
+  height: 18px;
+}
+
+QPushButton#playButton {
+  width: 22px;
+  height: 22px;
+  border-radius: 13px;
+}
+
+QPushButton:disabled {
+  background-color: #eee;
+}
+
+QInputDialog {
+	background-color: rgb(69,69,69);
+	border: 1px solid #fff;
+}
+
+QInputDialog &gt; QLabel {
+  color: white;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QWidget" name="mainWidget" native="true">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>20</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>20</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QSlider" name="positionSlider">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>12</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>12</height>
+         </size>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSlice" name="sliceWidget" native="true">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>6</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>6</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="horizontalWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="positionLabel">
+           <property name="text">
+            <string>00:00:00:00</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="durationLabel">
+           <property name="text">
+            <string>00:00:00:00</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="horizontalWidget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <property name="spacing">
+          <number>3</number>
+         </property>
+         <property name="leftMargin">
+          <number>20</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>20</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="volumeButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/volume.svg</normaloff>:/volume.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>14</width>
+             <height>14</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="volumeSlider">
+           <property name="minimumSize">
+            <size>
+             <width>100</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="value">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="stopButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/stop.svg</normaloff>:/stop.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>10</width>
+             <height>10</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="fastRewindButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/fr.svg</normaloff>:/fr.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="playButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/play.svg</normaloff>:/play.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>16</width>
+             <height>16</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="fastForwardButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/ff.svg</normaloff>:/ff.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="openButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/open.svg</normaloff>:/open.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="ejectButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/eject.svg</normaloff>:/eject.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>10</width>
+             <height>10</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="outputButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/device.svg</normaloff>:/device.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="effectButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/rotate.svg</normaloff>:/rotate.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="aboutButton">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="NRDAVPlayer.qrc">
+             <normaloff>:/about.svg</normaloff>:/about.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QSlice</class>
+   <extends>QWidget</extends>
+   <header>qslice.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="NRDAVPlayer.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>ejectButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onEjectClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>464</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>playButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onPlayClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>274</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>stopButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onStopClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fastForwardButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onFFClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>fastRewindButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onFRClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>247</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>positionSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onUpdatePosition(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>7</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>volumeSlider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onUpdateVolume(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>89</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>openButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onInputUrlClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>439</x>
+     <y>46</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>30</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>aboutButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onAbout()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>489</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>volumeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AVMenuWidget</receiver>
+   <slot>onMuteClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>50</x>
+     <y>56</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>270</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <signal>onEject()</signal>
+  <signal>onStop()</signal>
+  <signal>onPause()</signal>
+  <signal>onPlay()</signal>
+  <signal>onSeek(int)</signal>
+  <signal>onFF()</signal>
+  <signal>onFR()</signal>
+  <signal>onVolume(int)</signal>
+  <slot>onEjectClicked()</slot>
+  <slot>onStopClicked()</slot>
+  <slot>onPlayClicked()</slot>
+  <slot>onFFClicked()</slot>
+  <slot>onFRClicked()</slot>
+  <slot>onUpdatePosition(int)</slot>
+  <slot>onUpdateVolume(int)</slot>
+  <slot>onInputUrlClicked()</slot>
+  <slot>onAbout()</slot>
+  <slot>onMuteClicked()</slot>
+ </slots>
+</ui>

@@ -1,0 +1,16 @@
+NRDAVPlayer 5.1.2 [2022-11-18]
+    Disable Pause, FF, RW buttons in streaming sources
+    Support for alias (second parameter in command line)
+    Show last value in open URL dialog
+    Adjust preview size after loading (and reduce AutoStart time)
+
+NRDAVPlayer 5.1.1 [2022-11-17]
+    AutoStart streaming url in command-line parameter
+    Remove minimum size on main dialog
+
+NRDAVPlayer 5.1.0 [2022-11-17]
+    Use MFormats SDK 2.7.0.13138 (instead of 2.5.0.12364)
+    Update MFormats License (valid until 25-May-2023)
+
+NRDAVPlayer 0.1.0 [2021-05-25]
+    First release

@@ -1,0 +1,18 @@
+<RCC>
+  <qresource prefix="/">
+    <file>splash.jpg</file>
+    <file>rotate.svg</file>
+    <file>device.svg</file>
+    <file>mute.svg</file>
+    <file>volume.svg</file>
+    <file>open.svg</file>
+    <file>about.svg</file>
+    <file>eject.svg</file>
+    <file>ff.svg</file>
+    <file>fr.svg</file>
+    <file>pause.svg</file>
+    <file>play.svg</file>
+    <file>stop.svg</file>
+    <file>home.ico</file>
+  </qresource>
+</RCC>
